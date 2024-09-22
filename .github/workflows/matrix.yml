@@ -45,5 +45,5 @@ jobs:
 
       - name: Validate diffpy.pdffit2
         run: |
-          pytest tests/test_init.py
           pip list
+          pytest tests/test_init.py

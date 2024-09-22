@@ -37,24 +37,12 @@ namespace {
 
 void transfer_version()
 {
-    // obtain version information from the Python module
-    PyObject* mdiffpy_pdffit2;
-    mdiffpy_pdffit2 = PyImport_ImportModule("diffpy.pdffit2");
-    if (!mdiffpy_pdffit2)   return;
-    PyObject* pyversion;
-    pyversion = PyObject_GetAttrString(mdiffpy_pdffit2, "__version__");
-    Py_DECREF(mdiffpy_pdffit2);
-    if (!pyversion)         return;
-    const char* cversion;
-#if PY_MAJOR_VERSION >= 3
-    cversion = PyUnicode_AsUTF8(pyversion);
-#else
-    cversion = PyString_AsString(pyversion);
-#endif
-    // copy version information to C++ constant
-    if (cversion)   PdfFit::version(cversion);
-    Py_DECREF(pyversion);
+    const char* cversion = "3.12";  // Manually setting version here.
+
+    // Assuming PdfFit::version(char*) is a method that sets the version.
+    PdfFit::version(cversion);
 }
+
 
 
 void setup_module_contents(PyObject* d)

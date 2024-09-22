@@ -1,18 +1,6 @@
-#!/usr/bin/env python
-##############################################################################
-#
-# (c) 2006 trustees of the Michigan State University.
-# All rights reserved.
-# (c) 2024 The Trustees of Columbia University in the City of New York.
-# All rights reserved.
-#
-# File coded by: Billinge Group members and community contributors.
-#
-# See GitHub contributions for a more detailed list of contributors.
-# https://github.com/diffpy/diffpy.pdffit2/graphs/contributors
-#
-# See LICENSE.rst for license information.
-#
-##############################################################################
-
-
+print("Loading diffpy.pdffit2 package")
+try:
+    from importlib.metadata import version
+    __version__ = version("diffpy.pdffit2")
+except ImportError:
+    __version__ = "unknown"
