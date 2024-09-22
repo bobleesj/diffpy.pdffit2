@@ -12,32 +12,30 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      # Used to host cibuildwheel
       - uses: actions/setup-python@v5
 
       - name: Install dependencies on Ubuntu
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get update && sudo apt-get install -y libgsl-dev
 
-        - name: Install dependencies on Windows
+      - name: Install dependencies on Windows
         if: matrix.os == 'windows-latest'
         run: |
-            choco install gsl
+          choco install gsl
 
-        - name: Install dependencies on macOS
+      - name: Install dependencies on macOS
         if: startsWith(matrix.os, 'macos-')
         run: brew install gsl
 
-        - name: Install cibuildwheel
+      - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.21.1
 
-        - name: Build wheels
+      - name: Build wheels
         env:
             CIBW_BEFORE_BUILD: pip install six diffpy.structure cython cmake
         run: python -m cibuildwheel --output-dir wheelhouse
 
-        - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-            name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
-            path: ./wheelhouse/*.whl
+          name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
+          path: ./wheelhouse/*.whl
