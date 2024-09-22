@@ -123,7 +123,7 @@ initpdffit2()
 static struct PyModuleDef pdffit2moduledef = {
     PyModuleDef_HEAD_INIT,
     // .m_name =
-    "pdffit2",
+    "pdffit2_ext",  // Updated module name here
     // .m_doc =
     pypdffit2_module__doc__,
     // .m_size =
@@ -134,7 +134,7 @@ static struct PyModuleDef pdffit2moduledef = {
 
 
 PyMODINIT_FUNC
-PyInit_pdffit2(void)
+PyInit_pdffit2_ext(void)
 
 {
     PyObject *module = PyModule_Create(&pdffit2moduledef);

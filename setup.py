@@ -117,7 +117,7 @@ ext_kws = {
 
 # define extension here
 def create_extensions():
-    ext = Extension("diffpy.pdffit2.pdffit2", glob.glob("src/extensions/**/*.cc"), **ext_kws)
+    ext = Extension("diffpy.pdffit2.pdffit2_ext", glob.glob("src/extensions/**/*.cc"), **ext_kws)
     return [ext]
 
 
