@@ -86,6 +86,37 @@ void setup_module_contents(PyObject* d)
     transfer_version();
 }
 
+}   // namespace -------------------------------------------------------------
+
+// TODO remove PY_MAJOR_VERSION blocks after ending support for Python 2.7
+
+#if PY_MAJOR_VERSION == 2
+
+// Initialization function for the module (*must* be called initpdffit2)
+extern "C"
+void
+initpdffit2()
+{
+    // create the module and add the functions
+    PyObject * m = Py_InitModule4(
+        "pdffit2", pypdffit2_methods,
+        pypdffit2_module__doc__, 0, PYTHON_API_VERSION);
+
+    // get its dictionary
+    PyObject * d = PyModule_GetDict(m);
+
+    // check for errors
+    if (PyErr_Occurred()) {
+        Py_FatalError("can't initialize module pdffit2");
+    }
+
+    // install the module exceptions and version string
+    setup_module_contents(d);
+
+    return;
+}
+
+#else
 
 // Module initialization for Python 3 ----------------------------------------
 
