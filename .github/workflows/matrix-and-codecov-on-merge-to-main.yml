@@ -12,7 +12,7 @@ on:
 
 jobs:
   coverage:
-    uses: Billingegroup/release-scripts/.github/workflows/_matrix-and-codecov-on-merge-to-main.yml@v0
+    uses: bobleesj/release-scripts/.github/workflows/_matrix-and-codecov-on-merge-to-main.yml@matrix
     with:
       project: diffpy.pdffit2
       c_extension: true
