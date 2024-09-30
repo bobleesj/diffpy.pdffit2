@@ -37,7 +37,8 @@ jobs:
               if [[ "$(uname -s)" == "Linux" ]]; then
                 yum install -y gsl-devel;
               fi
-              dpkg -L libgsl-dev  # This verifies that GSL is installed and lists files
+              find /usr/ -name 'libgsl.a'
+              find /usr/ -name 'libgsl.so'
               pip install -r requirements/run.txt
             CIBW_BUILD: "cp312-*"
         run: python -m cibuildwheel --output-dir wheelhouse
