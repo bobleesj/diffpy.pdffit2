@@ -21,6 +21,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libgsl-dev
+          dpkg -L libgsl-dev  # This verifies that GSL is installed and lists files
 
       - name: Install C++/C compilers on macOS
         if: startsWith(matrix.os, 'macos-')
