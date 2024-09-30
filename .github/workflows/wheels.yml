@@ -5,7 +5,9 @@ on: [pull_request]
 jobs:
   build_wheels:
     name: Build wheels on ${{ matrix.os }}
-    shell: bash -l {0}
+    defaults:
+      run:
+        shell: bash -l {0}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
