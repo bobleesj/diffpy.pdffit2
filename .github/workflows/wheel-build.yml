@@ -100,10 +100,14 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          pattern: cibw-*
+          pattern: '**/*' # Make sure all files are downloaded, including wheels
           path: dist
           merge-multiple: true
 
+      # FIXME: Remove this section
+      - name: List dist files
+        run: ls -la dist # Ensure files are downloaded and in the correct location
+    
       - name: Setup Python for PyPI upload
         uses: actions/setup-python@v5
         with:
