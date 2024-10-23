@@ -55,7 +55,7 @@ jobs:
           CIBW_BUILD: ${{ matrix.python[1] }}-${{ matrix.buildplat[1] }}
           CIBW_BEFORE_BUILD: yum install -y gsl-devel && pip install -e .
         with:
-          output-dir: wheelhouse
+          output-dir: dist
 
       - name: Build wheels for macOS
         if: runner.os == 'macOS'
@@ -65,7 +65,7 @@ jobs:
           MACOSX_DEPLOYMENT_TARGET: 13.0
           CIBW_BEFORE_BUILD: brew install gsl && pip install -e .
         with:
-          output-dir: wheelhouse
+          output-dir: dist
 
       - name: Install GSL and Set Environment for GSL on Windows
         if: runner.os == 'Windows'
@@ -86,13 +86,13 @@ jobs:
             GSL_PATH=C:/vcpkg/installed/x64-windows
           CONDA_PREFIX: ${{ env.CONDA_PREFIX }}
         with:
-          output-dir: wheelhouse
+          output-dir: dist
 
       - name: Upload wheels to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.python[0] }}-${{ matrix.buildplat[0] }}.whl
-          path: ./wheelhouse/*.whl
+          path: ./dist/*.whl
 
   pypi-publish:
     needs: [build-wheels]
