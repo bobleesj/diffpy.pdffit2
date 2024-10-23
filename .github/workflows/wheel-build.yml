@@ -77,8 +77,8 @@ jobs:
       - name: Upload wheels to GitHub
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.python[0] }}-${{ matrix.buildplat[0] }}
-          path: ./dist/*.whl
+          name: ${{ matrix.python[0] }}-${{ matrix.buildplat[0] }}.whl
+          path: dist
 
   pypi-publish:
     needs: [build-wheels]
