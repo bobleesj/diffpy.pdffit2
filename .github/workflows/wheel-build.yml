@@ -86,7 +86,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: Packages
           path: dist
       - name: Setup Python for PyPI upload
         uses: actions/setup-python@v5
