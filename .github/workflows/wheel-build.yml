@@ -41,7 +41,7 @@ jobs:
           CIBW_BUILD: ${{ matrix.python[1] }}-${{ matrix.buildplat[1] }}
           CIBW_BEFORE_BUILD: yum install -y gsl-devel && pip install -e .
         with:
-          output-dir: wheelhouse
+          output-dir: dist
 
       - name: Build wheels for macOS
         if: runner.os == 'macOS'
