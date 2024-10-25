@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>diffpy.pdffit2 documentation &mdash; diffpy.pdffit2 0.1.0rc10 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=7ab3649f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=0ba9448a"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            diffpy.pdffit2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/diffpy.pdffit2.html">Package API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">diffpy.pdffit2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">diffpy.pdffit2 documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="title">
+<h1>diffpy.pdffit2 documentation<a class="headerlink" href="#title" title="Link to this heading"></a></h1>
+<p>diffpy.pdffit2 - PDFfit2 - real space structure refinement program.</p>
+<div class="line-block">
+<div class="line">Software version 0.1.0rc10.</div>
+<div class="line">Last updated October 25, 2024.</div>
+</div>
+<p>The diffpy.pdffit2 package provides functions for calculation and
+refinement of atomic Pair Distribution Function (PDF) from crystal
+structure model.  It is used as a computational engine by PDFgui. All
+refinements possible in PDFgui can be done with diffpy.pdffit2,
+although less conveniently and with a fair knowledge of Python.
+The package includes an extension for the interactive <a class="reference external" href="http://ipython.org">IPython</a> shell, which tries to mimic the old PDFFIT
+program.  To start IPython with this extension and also with plotting
+functions enabled, use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ipython</span> <span class="o">--</span><span class="n">ext</span><span class="o">=</span><span class="n">diffpy</span><span class="o">.</span><span class="n">pdffit2</span><span class="o">.</span><span class="n">ipy_ext</span> <span class="o">--</span><span class="n">pylab</span>
+</pre></div>
+</div>
+<p>The IPython extension is suitable for interactive use, however
+refinement scripts should be preferably written as a standard
+Python code.  This is more reliable and needs only a few extra
+statements.</p>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Link to this heading"></a></h2>
+<p>This code was derived from the first PDFFIT program by Thomas Proffen.
+The sources were converted to C++ by Jacques Bloch and then extensively hacked,
+extended and purged from most glaring bugs by Chris Farrow and Pavol Juhas.
+This code is currently maintained as part of the DiffPy project to create
+python modules for structure investigations from diffraction data.</p>
+<p>The DiffPy team is located in the Billinge-group at the Applied Physics
+and Applied Mathematics Department of the Columbia University in New York.
+Previous significant contributors to this code were</p>
+<blockquote>
+<div><p>Pavol Juhas,  Chris Farrow, Jacques Bloch, Wenduo Zhou</p>
+</div></blockquote>
+<p>For a detailed list of contributors see
+<a class="reference external" href="https://github.com/diffpy/diffpy.pdffit2/graphs/contributors">https://github.com/diffpy/diffpy.pdffit2/graphs/contributors</a>.</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h2>
+<p>If you use this program for a scientific research that leads to publication,
+we ask that you acknowledge use of the program by citing the following paper
+in your publication:</p>
+<blockquote>
+<div><p>C. L. Farrow, P. Juhás, J. W. Liu, D. Bryndin, E. S. Božin, J. Bloch, Th. Proffen
+and S. J. L. Billinge, PDFfit2 and PDFgui: computer programs for studying nanostructure
+in crystals (<a class="reference external" href="https://stacks.iop.org/0953-8984/19/335219">https://stacks.iop.org/0953-8984/19/335219</a>), <em>J. Phys.: Condens. Matter</em>, 19, 335219 (2007)</p>
+</div></blockquote>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>See the <a class="reference external" href="https://github.com/diffpy/diffpy.pdffit2#installation">README</a>
+file included with the distribution.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/diffpy.pdffit2.html">Package API</a></li>
+</ul>
+</div>
+</section>
+<section id="indices">
+<h2>Indices<a class="headerlink" href="#indices" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, The Trustees of Columbia University in the City of New York.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
