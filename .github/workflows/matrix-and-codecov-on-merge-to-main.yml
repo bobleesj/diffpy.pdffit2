@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -21,9 +22,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-13, macos-14]
-        python-version: ["3.11", "3.12"]
+        python-version: ["3.11", "3.12", "3.13"]
     env:
-          LATEST_PYTHON_VERSION: "3.12"
+          LATEST_PYTHON_VERSION: "3.13"
     steps:
       - name: Check out diffpy.pdffit2
         uses: actions/checkout@v4
