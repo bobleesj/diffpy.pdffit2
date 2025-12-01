@@ -8,11 +8,11 @@ on:
 
 jobs:
   build-release:
-    uses: scikit-package/release-scripts/.github/workflows/_build-wheel-release-upload.yml@v0
+    uses: bobleesj/release-scripts/.github/workflows/_build-wheel-release-upload.yml@pdffit2-pythons 
     with:
       project: diffpy.pdffit2
       c_extension: true
-      maintainer_GITHUB_username: sbillinge
+      maintainer_GITHUB_username: bobleesj
     secrets:
       PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
